@@ -1,3 +1,10 @@
+import 'package:flutter/material.dart';
+import 'app/app.dart';
+
 void main() {
-  print('Daily Assistant is starting...');
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    const DailyAssistantApp(),
+  );
 }
