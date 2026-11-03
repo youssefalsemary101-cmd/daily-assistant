@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'app_config.dart';
 
 class DailyAssistantApp extends StatelessWidget {
@@ -13,6 +14,11 @@ class DailyAssistantApp extends StatelessWidget {
       supportedLocales: const [
         Locale('ar'),
       ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -22,13 +28,16 @@ class DailyAssistantApp extends StatelessWidget {
       ),
       home: const Scaffold(
         body: Center(
-          child: Text(
-            'مرحبًا بك في مساعدك اليومي',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: Text(
+              'مرحبًا بك في مساعدك اليومي',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
         ),
       ),
